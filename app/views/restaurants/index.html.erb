@@ -1,2 +1,7 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<% @restaurants.each do |rest| %>
+  <h1>Some Info Below</h1>
+  <%= link_to rest.name, rest %>
+  <%= rest.address %>
+  <%= rest.category %>
+  <%= rest.phone_number %>
+<% end %>

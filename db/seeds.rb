@@ -8,4 +8,12 @@ Restaurant.destroy_all
     category: ["chinese", "italian", "japanese", "french", "belgian"].sample
   )
   restaurant.save!
+  3.times do
+    review = Review.new(
+      content: Faker::Restaurant.review,
+      rating: [0, 1, 2, 3, 4, 5].sample
+    )
+    review.restaurant = restaurant
+    review.save!
+  end
 end

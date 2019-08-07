@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  resources :restaurants
+  get 'review/new'
+  get 'review/create'
+  resources :restaurants do
+    resources :reviews, only: [:new, :create]
+  end
+
 end
